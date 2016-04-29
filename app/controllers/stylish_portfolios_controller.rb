@@ -3,4 +3,7 @@ class StylishPortfoliosController < ApplicationController
 
   def index
   end
+   def results
+    @user = User.find(params[:id])
+  end
 end
