@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'stylish_portfolios#index'
-  get 'welcome#index'
+  get 'stylish_portfolios/index'
+  root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
