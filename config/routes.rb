@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :flightsearches
   root 'stylish_portfolios#index'
  # root 'welcome#index'
 

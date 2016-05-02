@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Departure date:</strong>
+  <%= @flightsearch.departure_date %>
+</p>
+
+<p>
+  <strong>Arrival date:</strong>
+  <%= @flightsearch.arrival_date %>
+</p>
+
+<p>
+  <strong>Airport:</strong>
+  <%= @flightsearch.airport %>
+</p>
+
+<p>
+	<strong>Result:</strong>
+	<%= "http://www.skyscanner.com/dataservices/browse/v3/bvweb/US/USD/en-US/destinations/US/anywhere/#{@flightsearch.departure_date}/#{@flightsearch.arrival_date}/?includequotedate=true&includemetadata=true&includecityid=true&profile=minimalcityrollupwithnamesv2"
+	"http://www.skyscanner.com/dataservices/browse/v3/bvweb/US/USD/en-US/destinations/TYOA/anywhere/anytime/anytime/?profile=minimalcityrollupwithnamesv2"
+ 	%>
+
+<%= link_to 'Edit', edit_flightsearch_path(@flightsearch) %> |
+<%= link_to 'Back', flightsearches_path %>

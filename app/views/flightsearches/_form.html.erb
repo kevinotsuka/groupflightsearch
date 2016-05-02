@@ -1,0 +1,29 @@
+<%= form_for(@flightsearch) do |f| %>
+  <% if @flightsearch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flightsearch.errors.count, "error") %> prohibited this flightsearch from being saved:</h2>
+
+      <ul>
+      <% @flightsearch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :departure_date %><br>
+    <%= f.date_field :departure_date %>
+  </div>
+  <div class="field">
+    <%= f.label :arrival_date %><br>
+    <%= f.date_field :arrival_date %>
+  </div>
+  <div class="field">
+    <%= f.label :airport %><br>
+    <%= f.text_field :airport %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
