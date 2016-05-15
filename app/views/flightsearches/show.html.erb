@@ -1,3 +1,7 @@
+<head>
+	  <%= include_gon %>
+</head>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -17,9 +21,15 @@
 
 <p>
 	<strong>Result:</strong>
-	<%= "http://www.skyscanner.com/dataservices/browse/v3/bvweb/US/USD/en-US/destinations/US/anywhere/#{@flightsearch.departure_date}/#{@flightsearch.arrival_date}/?includequotedate=true&includemetadata=true&includecityid=true&profile=minimalcityrollupwithnamesv2"
-	"http://www.skyscanner.com/dataservices/browse/v3/bvweb/US/USD/en-US/destinations/TYOA/anywhere/anytime/anytime/?profile=minimalcityrollupwithnamesv2"
- 	%>
+
+	<%= @result["PlacePrices"][2]["Name"] %>
+	<%= @result["PlacePrices"][2]["IndirectPrice"] %>
+	<%= pp @result %>
+
+
+
+
+</p>
 
 <%= link_to 'Edit', edit_flightsearch_path(@flightsearch) %> |
 <%= link_to 'Back', flightsearches_path %>

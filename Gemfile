@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'gon'
 gem 'frontend-generators'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

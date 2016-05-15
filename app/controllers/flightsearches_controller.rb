@@ -1,6 +1,10 @@
 class FlightsearchesController < ApplicationController
   before_action :set_flightsearch, only: [:show, :edit, :update, :destroy]
 
+require 'json'
+require 'net/http'
+require 'pp'
+
   # GET /flightsearches
   # GET /flightsearches.json
   def index
@@ -10,6 +14,22 @@ class FlightsearchesController < ApplicationController
   # GET /flightsearches/1
   # GET /flightsearches/1.json
   def show
+      @flightsearches = Flightsearch.find( params[:id] )
+      source = "http://www.skyscanner.com/dataservices/browse/v3/bvweb/US/USD/en-US/destinations/TYOA/anywhere/#{@flightsearch.departure_date}/#{@flightsearch.arrival_date}/?profile=minimalcityrollupwithnamesv2"
+      resp = Net::HTTP.get_response(URI.parse(source))
+      data = resp.body
+      @result = JSON.parse(data)
+      @flightdata =  @result.to_json
+      pp @result
+
+      @result.each do |name|
+        puts "testtesttest"
+      end
+
+      respond_to do |format|
+        format.html
+        format.json
+      end
   end
 
   # GET /flightsearches/new
